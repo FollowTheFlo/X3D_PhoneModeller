@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html >
+
+<head>
+<title>test javascript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="programs/Phone.js"></script>
+<script language="JavaScript" src="programs/Keyboard.js"></script>
+<script language="JavaScript" src="programs/Size.js"></script>
+<script language="JavaScript" src="programs/Body.js"></script>
+<script language="JavaScript" src="programs/Buttons.js"></script>
+<script language="JavaScript" src="programs/Init.js"></script>
+<script language="JavaScript" src="programs/Ajax_Communication.js"></script>
+<script language="JavaScript" src="programs/Scene.js"></script>
+<script language="JavaScript" src="programs/Vector3D.js"></script>
+<script language="JavaScript" src="programs/Screen.js"></script>
+<script language="JavaScript" src="programs/Database_Access.js"></script>
+
+
+
+
+
+
+</head>
+
+<body onload= "init()" background="textures/bg.gif" style="background-repeat : no-repeat;">
+
+<table >
+
+<tr>
+	<td>
+		<h1> <b><FONT color="blue"face="Arial"> Customize your phone </FONT></b></h1>
+		<h2>Select elements of the phone</h2>
+	</td>
+<td>
+
+<table border="0">
+<tr>
+	<td>
+	<p><b>User 	&      password: </b></p>
+	<input type="text" id="user">
+	<input type="text" id="password">
+
+	<input type="button" value="Register" style="background-color:blue" onClick="register_database();">
+	<input type="button" value="Log on" style="background-color:blue" onClick="log_database();">
+
+	<input type="button" disabled="true" id="show_profiles" value="Show my phone profiles" style="background-color:blue" onClick="request_profiles_database()">
+	</td>
+	<td>
+	<div ID="log_field"></div>
+	<td>
+</tr>
+
+</table >
+
+</td>
+</tr>
+
+<tr>
+	<td>
+	<embed WIDTH="400" HEIGHT="430" NAME="FLUX"  TYPE="model/x3d" DASHBOARD="0" BGCOLOR="0xC0C0C0">
+	</td>
+
+	<td>
+
+	<table border="0">
+
+
+
+<th><input type="button" id="Save" value="Save" disabled ="true" style="background-color:blue" onClick="save_phone()"></th> <th><h3>Elements</h3></th> <th><h3>Top<br/>colour</h3></th> <th><h3>Bottom<br/>colour</h3></th>
+	<tr>
+	<td align="top"><h3> Body</h3></td>
+
+		<td>
+	<select name="ma_liste" id="body_list" size="1">
+		<option value="phone_parts/slide_material.txt">Slide top (colour)</option>
+		<option value="phone_parts/rot_material.txt">Rotate top (colour)</option>
+		<option value="phone_parts/notop_material.txt">No top (colour)</option>
+		<option value="phone_parts/notop_texture.txt">No top (texture)</option>
+		<option value="phone_parts/slide_texture.txt">Slide top (texture)</option>
+		<option value="phone_parts/test2.txt">Rotate top (texture)</option>
+	</select>
+	<p>&nbsp </p>
+		</td>
+
+		<td>
+			<select name="ma_liste" id="col_bodyTop_list" size="1">
+				<option value="white">white</option>
+				<option value="black">black</option>
+				<option value="red">red</option>
+				<option value="green">green</option>
+				<option value="blue">blue</option>
+				<option value="yellow">yellow</option>
+				<option value="purple">purple</option>
+			</select>
+			<p>&nbsp </p>
+		</td>
+
+		<td>
+					<select name="ma_liste" id="col_body_list" size="1">
+						<option value="white">white</option>
+						<option value="black">black</option>
+						<option value="red">red</option>
+						<option value="green">green</option>
+						<option value="blue">blue</option>
+						<option value="yellow">yellow</option>
+						<option value="purple">purple</option>
+					</select>
+					<p>&nbsp </p>
+		</td>
+		<td>
+		<input value="Change colour" type="button" style="background-color:blue" onClick="change_body_colour();">
+
+			</td>
+
+	<tr>
+	<td> <h3>Keyboard</h3></td>
+		<td>
+	<select name="keyboard_list" id="keyboard_list" size="1">
+		<option value="phone_parts/alca_k.txt">Alcatel 0T-E105</option>
+		<option value="phone_parts/nokia_k.txt">Nokia 6300</option>
+		<option value="phone_parts/ericw880_k.txt">Ericsson W880</option>
+		<option value="phone_parts/se550_k.txt">Ericsson K550</option>
+		<option value="phone_parts/colour_k.txt">colour box</option>
+		<option value="phone_parts/samz400_k.txt">Samsung Z400</option>
+	</select>
+	<p>&nbsp </p>
+		</td>
+		<td colspan="2" >
+	</td>
+		<td></td>
+
+	</tr>
+
+	<tr>
+	<td> <h3>Buttons</h3></td>
+		<td>
+			<select name="buttons_list" id="buttons_list" size="1">
+				<option value="phone_parts/alca_b.txt">Alcatel 0T-E-105</option>
+				<option value="phone_parts/nokia_b.txt">Nokia N95</option>
+				<option value="phone_parts/samsung_b.txt">Samsung D600</option>
+				<option value="phone_parts/samz400_b.txt">Samsung Z400</option>
+				<option value="phone_parts/ericw880_b.txt">Ericsson W880</option>
+				<option value="phone_parts/se550_b.txt">Ericsson K550</option>
+				<option value="phone_parts/colour_b.txt">colour box</option>
+			</select>
+			<p>&nbsp </p>
+		</td>
+
+		<td colspan="3" ><div ID="txtHint"></div></div></td>
+
+	</tr>
+	<tr>
+	<td> <h3>Screen</h3></td>
+		<td>
+					<select name="screen_list" id="screen_list" size="1">
+						<option value="phone_parts/alca_s.txt">Alcatel 0T-E-105</option>
+						<option value="phone_parts/nokia_s.txt">Nokia N95</option>
+						<option value="phone_parts/ericw880_s.txt">Ericsson W880</option>
+						<option value="phone_parts/colour_s.txt">colour box</option>
+					</select>
+					<p>&nbsp </p>
+		</td>
+
+
+
+		<tr>
+		<td ALIGN="left">
+
+		<input value="Make it!" style="background-color:red" type="button" onClick="get_data_form();">
+
+		</td>
+		<td>
+		<input id="Display_saved" disabled ="true" type="button" style="background-color:blue" value="Display saved phone" onClick="display_phone_save()">
+		</td>
+		</tr>
+		<tr>
+			<td colspan = "4">
+					<b>profile name : </b>
+					<input type="text" id="profile">
+					<input type="button" value="Save profile" style="background-color:blue" onClick="save_profile_database()">
+			</td>
+		</tr>
+
+	</table>
+	</td>
+
+</table>
+
+
+
+</body>
+</html>
+
+ 
